@@ -1,0 +1,331 @@
+{
+  "Version": 1,
+  "Hash": "AZN6ft0GFUqwr8B9R6S6tW5E7KyOAOKKijRVAY9UPdg=",
+  "Source": "WebApplication1",
+  "BasePath": "_content/WebApplication1",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "WebApplication1\\wwwroot",
+      "Source": "WebApplication1",
+      "ContentRoot": "C:\\Users\\saura\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\saura\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\images\\16f08a6d-a9f8-48ce-8ee4-d58a067903ee.jpeg",
+      "SourceId": "WebApplication1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\saura\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "images/16f08a6d-a9f8-48ce-8ee4-d58a067903ee#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9269cmag84",
+      "Integrity": "8cp20IN+PgBqN3y8fSv61C5+xKbOkC3AZ4BuBYylClw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\16f08a6d-a9f8-48ce-8ee4-d58a067903ee.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\saura\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\images\\3be3c0f3-0786-465b-a3e4-4af1212c118e.jpeg",
+      "SourceId": "WebApplication1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\saura\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "images/3be3c0f3-0786-465b-a3e4-4af1212c118e#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9269cmag84",
+      "Integrity": "8cp20IN+PgBqN3y8fSv61C5+xKbOkC3AZ4BuBYylClw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\3be3c0f3-0786-465b-a3e4-4af1212c118e.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\saura\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\images\\5165c182-579d-4a89-80a5-10bc29fa141d.jpeg",
+      "SourceId": "WebApplication1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\saura\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "images/5165c182-579d-4a89-80a5-10bc29fa141d#[.{fingerprint}]?.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9269cmag84",
+      "Integrity": "8cp20IN+PgBqN3y8fSv61C5+xKbOkC3AZ4BuBYylClw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\5165c182-579d-4a89-80a5-10bc29fa141d.jpeg"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "images/16f08a6d-a9f8-48ce-8ee4-d58a067903ee.9269cmag84.jpeg",
+      "AssetFile": "C:\\Users\\saura\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\images\\16f08a6d-a9f8-48ce-8ee4-d58a067903ee.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56332"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8cp20IN+PgBqN3y8fSv61C5+xKbOkC3AZ4BuBYylClw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 23 May 2025 11:41:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9269cmag84"
+        },
+        {
+          "Name": "label",
+          "Value": "images/16f08a6d-a9f8-48ce-8ee4-d58a067903ee.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8cp20IN+PgBqN3y8fSv61C5+xKbOkC3AZ4BuBYylClw="
+        }
+      ]
+    },
+    {
+      "Route": "images/16f08a6d-a9f8-48ce-8ee4-d58a067903ee.jpeg",
+      "AssetFile": "C:\\Users\\saura\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\images\\16f08a6d-a9f8-48ce-8ee4-d58a067903ee.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56332"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8cp20IN+PgBqN3y8fSv61C5+xKbOkC3AZ4BuBYylClw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 23 May 2025 11:41:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8cp20IN+PgBqN3y8fSv61C5+xKbOkC3AZ4BuBYylClw="
+        }
+      ]
+    },
+    {
+      "Route": "images/3be3c0f3-0786-465b-a3e4-4af1212c118e.9269cmag84.jpeg",
+      "AssetFile": "C:\\Users\\saura\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\images\\3be3c0f3-0786-465b-a3e4-4af1212c118e.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56332"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8cp20IN+PgBqN3y8fSv61C5+xKbOkC3AZ4BuBYylClw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 23 May 2025 11:43:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9269cmag84"
+        },
+        {
+          "Name": "label",
+          "Value": "images/3be3c0f3-0786-465b-a3e4-4af1212c118e.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8cp20IN+PgBqN3y8fSv61C5+xKbOkC3AZ4BuBYylClw="
+        }
+      ]
+    },
+    {
+      "Route": "images/3be3c0f3-0786-465b-a3e4-4af1212c118e.jpeg",
+      "AssetFile": "C:\\Users\\saura\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\images\\3be3c0f3-0786-465b-a3e4-4af1212c118e.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56332"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8cp20IN+PgBqN3y8fSv61C5+xKbOkC3AZ4BuBYylClw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 23 May 2025 11:43:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8cp20IN+PgBqN3y8fSv61C5+xKbOkC3AZ4BuBYylClw="
+        }
+      ]
+    },
+    {
+      "Route": "images/5165c182-579d-4a89-80a5-10bc29fa141d.9269cmag84.jpeg",
+      "AssetFile": "C:\\Users\\saura\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\images\\5165c182-579d-4a89-80a5-10bc29fa141d.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56332"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8cp20IN+PgBqN3y8fSv61C5+xKbOkC3AZ4BuBYylClw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 23 May 2025 11:43:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9269cmag84"
+        },
+        {
+          "Name": "label",
+          "Value": "images/5165c182-579d-4a89-80a5-10bc29fa141d.jpeg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8cp20IN+PgBqN3y8fSv61C5+xKbOkC3AZ4BuBYylClw="
+        }
+      ]
+    },
+    {
+      "Route": "images/5165c182-579d-4a89-80a5-10bc29fa141d.jpeg",
+      "AssetFile": "C:\\Users\\saura\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\images\\5165c182-579d-4a89-80a5-10bc29fa141d.jpeg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "56332"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8cp20IN+PgBqN3y8fSv61C5+xKbOkC3AZ4BuBYylClw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 23 May 2025 11:43:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8cp20IN+PgBqN3y8fSv61C5+xKbOkC3AZ4BuBYylClw="
+        }
+      ]
+    }
+  ]
+}

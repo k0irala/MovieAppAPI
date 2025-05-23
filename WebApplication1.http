@@ -1,0 +1,73 @@
+@WebApplication1_HostAddress = https://localhost:44317
+
+GET {{WebApplication1_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+POST {{WebApplication1_HostAddress}}/api/todoes
+Content-Type: application/json
+
+{
+  
+  "name": "walk dog",
+  "isComplete": true
+}
+
+###
+
+POST {{WebApplication1_HostAddress}}/api/todoes
+Content-Type: application/json
+
+{
+  //Todo
+}
+
+###
+
+GET {{WebApplication1_HostAddress}}/api/todoes
+
+###
+
+@id=1
+GET {{WebApplication1_HostAddress}}/api/todoes/{{id}}
+
+###
+
+GET {{WebApplication1_HostAddress}}/api/todoes/{{id}}
+
+###
+@id=1
+GET {{WebApplication1_HostAddress}}/api/todoes/{{id}}
+
+###
+
+GET {{WebApplication1_HostAddress}}/api/todoes/{{id}}
+
+###
+
+GET {{WebApplication1_HostAddress}}/api/todoes
+
+###
+@id=1
+PUT {{WebApplication1_HostAddress}}/api/todoes/{{id}}
+Content-Type: application/json
+
+{
+  //Todo
+}
+
+###
+@id=1
+PUT {{WebApplication1_HostAddress}}/api/todoes/{{id}}
+Content-Type: application/json
+
+{
+  
+      "id":1,
+      "name":"doogy",
+      "isComplete":true
+  
+}
+
+###

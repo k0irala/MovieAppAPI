@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\saura\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\images\\16f08a6d-a9f8-48ce-8ee4-d58a067903ee.jpeg",
+      "PackagePath": "staticwebassets\\images\\16f08a6d-a9f8-48ce-8ee4-d58a067903ee.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\saura\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\images\\3be3c0f3-0786-465b-a3e4-4af1212c118e.jpeg",
+      "PackagePath": "staticwebassets\\images\\3be3c0f3-0786-465b-a3e4-4af1212c118e.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\saura\\source\\repos\\WebApplication1\\WebApplication1\\wwwroot\\images\\5165c182-579d-4a89-80a5-10bc29fa141d.jpeg",
+      "PackagePath": "staticwebassets\\images\\5165c182-579d-4a89-80a5-10bc29fa141d.jpeg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WebApplication1.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WebApplication1.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.WebApplication1.props",
+      "PackagePath": "build\\WebApplication1.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.WebApplication1.props",
+      "PackagePath": "buildMultiTargeting\\WebApplication1.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.WebApplication1.props",
+      "PackagePath": "buildTransitive\\WebApplication1.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
