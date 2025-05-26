@@ -290,3 +290,4 @@ C:\Users\saura\source\repos\WebApplication1\WebApplication1\bin\Debug\net8.0\run
 C:\Users\saura\source\repos\WebApplication1\WebApplication1\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\saura\source\repos\WebApplication1\WebApplication1\bin\Debug\net8.0\Dapper.dll
 C:\Users\saura\source\repos\WebApplication1\WebApplication1\bin\Debug\net8.0\WebApplication1.staticwebassets.runtime.json
+C:\Users\saura\source\repos\WebApplication1\WebApplication1\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

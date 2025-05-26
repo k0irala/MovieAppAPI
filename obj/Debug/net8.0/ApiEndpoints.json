@@ -1,17 +1,25 @@
 [
   {
-    "ContainingType": "WebApplication1.Controllers.EmployeeController\u002B\u003C\u003Ec",
-    "Method": "\u003CGetAllEmployees\u003Eb__3_0",
-    "RelativePath": "api/Employee",
-    "HttpMethod": "GET",
-    "IsController": false,
+    "ContainingType": "WebApplication1.Controllers.AccountController",
+    "Method": "Login",
+    "RelativePath": "api/Account/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "WebApplication1.Models.Api.LoginRequestModel",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[WebApplication1.Models.Entities.Employee, WebApplication1, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "WebApplication1.Models.Api.LoginResponseModel",
         "MediaTypes": [
-          "application/json"
+          "text/plain",
+          "application/json",
+          "text/json"
         ],
         "StatusCode": 200
       }
@@ -301,16 +309,6 @@
         "IsRequired": false
       },
       {
-        "Name": "MovieFileName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "MovieFilePath",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "MoviePoster",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
@@ -318,11 +316,6 @@
       {
         "Name": "Rating",
         "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "GenreName",
-        "Type": "System.String",
         "IsRequired": false
       }
     ],

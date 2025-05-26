@@ -6,11 +6,13 @@ using WebApplication1.Models;
 using WebApplication1.Models.Entities;
 using Dapper;
 using WebApplication1.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebApplication1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class EmployeeController(ApplicationDbContext dbContext,IDapperRepository repository,WebApplication app) : ControllerBase
     {
         [HttpGet]

@@ -12,11 +12,13 @@ using WebApplication1.Models.Entities;
 using System.IO;
 using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 using WebApplication1.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebApplication1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class MovieController(IDapperRepository repository, ApplicationDbContext dbContext) : ControllerBase
     {
         [HttpGet]

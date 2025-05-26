@@ -1,5 +1,6 @@
 ﻿using System.Net.WebSockets;
 using Dapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Data;
@@ -10,6 +11,7 @@ namespace WebApplication1.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class GenreController(ApplicationDbContext dbContext, IDapperRepository repository) : ControllerBase
     {
         [HttpGet]
