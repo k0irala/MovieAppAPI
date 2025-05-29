@@ -1,18 +1,13 @@
-﻿using System.Threading.Tasks;
-using Dapper;
-using Microsoft.AspNetCore.Http;
+﻿using Dapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Routing.Constraints;
-using Microsoft.Build.Construction;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query;
 using WebApplication1.Data;
 using WebApplication1.Interfaces;
 using WebApplication1.Models.Entities;
-using System.IO;
-using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 using WebApplication1.Models;
 using Microsoft.AspNetCore.Authorization;
+using MovieApplicationApi.Models;
+using System.Data;
 
 namespace WebApplication1.Controllers
 {
@@ -22,10 +17,10 @@ namespace WebApplication1.Controllers
     public class MovieController(IDapperRepository repository, ApplicationDbContext dbContext) : ControllerBase
     {
         [HttpGet]
-        public IEnumerable<Movie> getAllMovies()
+        public IEnumerable<AllMovieDTO> getAllMovies()
         {
             DynamicParameters parameters = new();
-            var allMovies = repository.Query<Movie>("GetAllMovies", parameters);
+            var allMovies = repository.Query<AllMovieDTO>("GetAllMovies", parameters);
             return allMovies;
         }
         [HttpGet("{id}")]
@@ -58,19 +53,41 @@ namespace WebApplication1.Controllers
                 var posterImagePath = "images/" + fullPath;
                 var posterName = movie.MoviePoster.FileName;
 
-                var movieData = new Movie
-                {
-                    Title = movie.Title,
-                    GenreId = movie.GenreId,
-                    Rating = movie.Rating,
-                    ReleaseDate = movie.ReleaseDate,
-                    MovieFileName = posterName,
-                    MovieFilePath = posterImagePath
-                };
+                DynamicParameters parameters = new();
+                parameters.Add("@movieTitle", movie.Title);
+                parameters.Add("@genreId", movie.GenreId);
+                parameters.Add("@releaseDate", movie.ReleaseDate);
+                parameters.Add("@rating", movie.Rating);
+                parameters.Add("@Result", dbType: DbType.Int32, direction: ParameterDirection.Output);
+                parameters.Add("@movieFileName", posterName);
+                parameters.Add("@movieFilePath", posterImagePath);
 
-                dbContext.Movies.Add(movieData);
-                dbContext.SaveChanges();
-                return Ok(movieData);
+
+                repository.Execute("InsertMovieData", parameters);
+
+                var result = parameters.Get<int>("@Result");
+                if(result == 1)
+                {
+                    return Ok("Movie Inserted successfully");
+                }
+                else
+                {
+                    return BadRequest("Error in inserting movie to database");
+                }
+
+                    //var movieData = new Movie
+                    //{
+                    //    Title = movie.Title,
+                    //    GenreId = movie.GenreId,
+                    //    Rating = movie.Rating,
+                    //    ReleaseDate = movie.ReleaseDate,
+                    //    MovieFileName = posterName,
+                    //    MovieFilePath = posterImagePath
+                    //};
+
+                    //dbContext.Movies.Add(movieData);
+                    //dbContext.SaveChanges();
+                    //return Ok(movieData);
 
             }
             return Conflict(new { error = "Failed to add movie to database" });
@@ -129,18 +146,35 @@ namespace WebApplication1.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> deleteMovie(int id)
+        public IActionResult deleteMovie(int id)
         {
-            var existingMovie = await dbContext.Movies.SingleOrDefaultAsync(x => x.Id == id);
-            if(existingMovie == null)
+
+            DynamicParameters parameters = new();
+            parameters.Add("@movieId", id);
+            parameters.Add("@Result", dbType: DbType.Int32, direction :ParameterDirection.Output);
+
+            repository.Execute("DeleteMovieData", parameters);
+
+            var result = parameters.Get<int>("@Result");
+
+            if(result == -1)
             {
-                return NotFound();
+                return NotFound("The movie is not found");
             }
-            dbContext.Movies.Remove(existingMovie);
-            var rowsDeleted = dbContext.SaveChanges();
-            if (rowsDeleted > 0)
-                return Ok("Deleted Successfully");
-            return Ok("Deleted Successfully");
+            else
+            {
+                return Ok("The movie has been deleted successfullly");
+            }
+            //var existingMovie = await dbContext.Movies.SingleOrDefaultAsync(x => x.Id == id);
+            //if(existingMovie == null)
+            //{
+            //    return NotFound();
+            //}
+            //dbContext.Movies.Remove(existingMovie);
+            //var rowsDeleted = dbContext.SaveChanges();
+            //if (rowsDeleted > 0)
+            //    return Ok("Deleted Successfully");
+            //return Ok("Deleted Successfully");
         }
 
     }

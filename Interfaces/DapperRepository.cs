@@ -15,7 +15,16 @@ namespace WebApplication1.Interfaces
         }
         public T QuerySingleOrDefault<T>(string query, DynamicParameters parameters, CommandType type = CommandType.StoredProcedure)
         {
-            return DbConnection.EstablishConnection().QuerySingleOrDefault<T>(query, parameters, commandType: type);
+            var data = DbConnection.EstablishConnection().QuerySingleOrDefault<T>(query, parameters, commandType: type);
+            if (data == null)
+            {
+                throw new Exception("No data found for the given query.");
+            }
+            return data;
+        }
+        public void Execute(string query,DynamicParameters parameters,CommandType type = CommandType.StoredProcedure)
+        {
+            DbConnection.EstablishConnection().Execute(query, parameters, commandType: type);
         }
     }
 }
