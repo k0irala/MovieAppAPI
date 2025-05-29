@@ -1,8 +1,7 @@
-﻿namespace WebApplication1.Models.Api
+﻿namespace WebApplication1.Models.Api;
+
+public class LoginRequestModel
 {
-    public class LoginRequestModel
-    {
-        public string? Username { get; set; }
-        public string? Password { get; set; }
-    }
+    public string? Username { get; set; }
+    public string? Password { get; set; }
 }

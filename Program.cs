@@ -11,12 +11,13 @@ using WebApplication1.Interfaces;
 using WebApplication1.Models.Entities;
 using WebApplication1.Services;
 using FluentValidation.AspNetCore;
+using WebApplication1.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddScoped<IValidator<Genre>, GenreValidator>();
+builder.Services.AddScoped<IValidator<AddEmployeeDTO>, EmployeeValidator>();
 builder.Services.AddControllers();
-builder.Services.AddFluentValidationAutoValidation();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>

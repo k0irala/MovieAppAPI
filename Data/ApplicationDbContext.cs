@@ -2,20 +2,19 @@
 using MovieApplicationApi.Models.Entities;
 using WebApplication1.Models.Entities;
 
-namespace WebApplication1.Data
+namespace WebApplication1.Data;
+
+public class ApplicationDbContext : DbContext
 {
-    public class ApplicationDbContext : DbContext
+    public ApplicationDbContext(DbContextOptions options) :
+        base(options)
     {
-        public ApplicationDbContext(DbContextOptions options) :
-            base(options)
-        {
-            
-        }
-        public DbSet<Employee> Employees { get; set; }
-        public DbSet<Genre> Genres { get; set; }    
-        public DbSet<Movie> Movies { get; set; }
-        public DbSet<User> Users { get; set; }
-        public DbSet<RefreshToken> RefreshTokens { get; set; }
-        public DbSet<BlackListToken> BlackListTokens { get; set; }
+        
     }
+    public DbSet<Employee> Employees { get; set; }
+    public DbSet<Genre> Genres { get; set; }    
+    public DbSet<Movie> Movies { get; set; }
+    public DbSet<User> Users { get; set; }
+    public DbSet<RefreshToken> RefreshTokens { get; set; }
+    public DbSet<BlackListToken> BlackListTokens { get; set; }
 }
