@@ -69,7 +69,7 @@
   },
   {
     "ContainingType": "WebApplication1.Controllers.EmployeeController",
-    "Method": "GetAllEmployees",
+    "Method": "GetAll",
     "RelativePath": "api/Employee",
     "HttpMethod": "GET",
     "IsController": true,
@@ -89,7 +89,7 @@
   },
   {
     "ContainingType": "WebApplication1.Controllers.EmployeeController",
-    "Method": "AddEmployee",
+    "Method": "Create",
     "RelativePath": "api/Employee",
     "HttpMethod": "POST",
     "IsController": true,
@@ -105,7 +105,7 @@
   },
   {
     "ContainingType": "WebApplication1.Controllers.EmployeeController",
-    "Method": "DeleteEmployee",
+    "Method": "Delete",
     "RelativePath": "api/Employee/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -121,7 +121,7 @@
   },
   {
     "ContainingType": "WebApplication1.Controllers.EmployeeController",
-    "Method": "GetEmployeeById",
+    "Method": "GetById",
     "RelativePath": "api/Employee/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -137,7 +137,7 @@
   },
   {
     "ContainingType": "WebApplication1.Controllers.EmployeeController",
-    "Method": "UpdateEmployee",
+    "Method": "Update",
     "RelativePath": "api/Employee/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -155,6 +155,32 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApplication1.Controllers.EmployeeController",
+    "Method": "SignatureForCreate",
+    "RelativePath": "api/Employee/AddEmployeeSignature",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addEmployee",
+        "Type": "WebApplication1.Models.AddEmployeeDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "WebApplication1.Controllers.GenreController",
@@ -394,6 +420,95 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApplicationApi.Controllers.UserController",
+    "Method": "GetAll",
+    "RelativePath": "api/User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[WebApplication1.Models.Entities.User, MovieApplicationApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "MovieApplicationApi.Controllers.UserController",
+    "Method": "Create",
+    "RelativePath": "api/User",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "WebApplication1.Models.Entities.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApplicationApi.Controllers.UserController",
+    "Method": "Delete",
+    "RelativePath": "api/User/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApplicationApi.Controllers.UserController",
+    "Method": "GetById",
+    "RelativePath": "api/User/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MovieApplicationApi.Controllers.UserController",
+    "Method": "Update",
+    "RelativePath": "api/User/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "user",
+        "Type": "WebApplication1.Models.Entities.User",
         "IsRequired": true
       }
     ],

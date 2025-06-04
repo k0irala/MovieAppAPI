@@ -1,4 +1,5 @@
 ﻿using MovieApplicationApi.Models.Entities;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApplication1.Models.Entities;
 
@@ -12,5 +13,6 @@ public class User
     public string Password { get; set; } = string.Empty;
     public int Roles { get; set; }
 
+    [NotMapped]
     public ICollection<RefreshToken>? RefreshTokens { get; set; } //It is a navigation property
 }

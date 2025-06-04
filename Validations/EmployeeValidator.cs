@@ -1,5 +1,4 @@
 ﻿using FluentValidation;
-using NuGet.Protocol;
 using WebApplication1.Models;
 
 namespace MovieApplicationApi.Validations;

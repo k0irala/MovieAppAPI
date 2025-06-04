@@ -1,137 +1,69 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebApplication1.Data;
 using WebApplication1.Models;
 using WebApplication1.Models.Entities;
-using Dapper;
-using WebApplication1.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using System.Data;
-using FluentValidation;
-using FluentValidation.Results;
+using MovieApplicationApi.Repository;
+using MovieApplicationApi.Signatures;
+using NuGet.Protocol.Core.Types;
 
 namespace WebApplication1.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
 [Authorize]
-public class EmployeeController(ApplicationDbContext dbContext,IDapperRepository repository,IValidator<AddEmployeeDTO> validator) : ControllerBase
+public class EmployeeController(IEmployeeRepository empRepository) : ControllerBase
 {
     [HttpGet]
-    public List<Employee>  GetAllEmployees()
-    { 
-        DynamicParameters dynamicParameters = new DynamicParameters();
-        var allEmployees = repository.Query<Employee>("GetAllEmployees", dynamicParameters);
-        return allEmployees.ToList();
+    public List<Employee> GetAll()
+    {
+        List<Employee> employees = empRepository.GetAllEmployees();
+        return employees;
     }
     [HttpPost]
-    public IActionResult AddEmployee(AddEmployeeDTO addEmployee)
+    public IActionResult Create(AddEmployeeDTO addEmployee)
     {
-       ValidationResult validationResult = validator.Validate(addEmployee);
-        if (!validationResult.IsValid)
-            return BadRequest(validationResult.Errors.Select(s => new { field = s.PropertyName, error = s.ErrorMessage }));
-
-        DynamicParameters parameters = new();
-        parameters.Add("@name", addEmployee.Name);
-        parameters.Add("@email", addEmployee.Email);
-        parameters.Add("@address", addEmployee.Address);
-        parameters.Add("@salary", addEmployee.Salary);
-        parameters.Add("@Result", dbType: DbType.Int32, direction: ParameterDirection.Output);
-        repository.Execute("InsertEmployeeData", parameters);
-
-        int result = parameters.Get<int>("@Result");
-        if (result == -1)
+        if (!Request.Headers.TryGetValue("X-Signature", out var signatureHeader))
         {
-            return BadRequest("Error in inserting employee to database");
+            return BadRequest("Missing X-Signature header.");
         }
-
-
-        //var employees = new Employee()
-        //{
-        //    Email = addEmployee.Email,
-        //    Name = addEmployee.Name,
-        //    Salary = addEmployee.Salary,
-        //    Address = addEmployee.Address
-        //};
-        //dbContext.Employees.Add(employees);
-        //dbContext.SaveChanges();
-        return Ok("Successfully Inserted Employee Data in the database");
+        var apiSignature = signatureHeader.ToString();
+        int result = empRepository.AddEmployee(addEmployee, apiSignature);
+        if (result == -1) return BadRequest("Invalid employee data provided.");
+        if (result == 401) return Unauthorized("API signature is not valid");
+        return Ok("Employee added successfully");
     }
-    [HttpDelete("{id}")]
-    public IActionResult DeleteEmployee(int id)
+    [HttpPost("AddEmployeeSignature")]
+    public string SignatureForCreate(AddEmployeeDTO addEmployee)
     {
-        DynamicParameters parameters = new();
-        parameters.Add("@empId", id);
-        parameters.Add("@Result",dbType: DbType.Int32,direction:ParameterDirection.Output);
-
-        repository.Execute("DeleteEmployeeData", parameters);
-
-        var result = parameters.Get<int>("@Result");
-
-        if (result == -1) {
-
-            return NotFound("The requested Employee cannot be found");
-
-        }
-        //var existingEmployee = dbContext.Employees.SingleOrDefault(x => x.Id == id);
-        //if (existingEmployee == null)
-        //{
-        //    return BadRequest();
-        //}
-        //dbContext.Employees.Remove(existingEmployee);
-        //dbContext.SaveChanges();
-        return Ok("The employee has been deleted successfully");
+        string apiSignature = empRepository.GetAddEmployeeSignature(addEmployee);
+        return apiSignature;
+    }
+    
+    [HttpDelete("{id}")]
+    public IActionResult Delete(int id)
+    {
+        int result = empRepository.DeleteEmployee(id);
+        if (result == -1) return NotFound("The requested employee cannot be found");
+        else if (result == 0) return BadRequest("The employee does not exist or has already been deleted");
+        return Ok("Employee deleted successfully");
     }
 
     [HttpGet("{id}")]
-
-    public IActionResult GetEmployeeById(int id)
+    public IActionResult GetById(int id)
     {
-
-        DynamicParameters parameters = new();
-        parameters.Add("userID", id);
-        var employees = repository.QuerySingleOrDefault<Employee>("GetEmployeeById", parameters);
-
-        //var employees = dbContext.Employees.SingleOrDefault(x => x.Id == id);
-        if (employees == null)
+        Employee employee = empRepository.GetEmployeeById(id);
+        if (employee == null)
         {
-            return BadRequest();
-        }
-        return Ok(employees);
-    }
-    [HttpPut("{id}")]
-    public IActionResult UpdateEmployee(int id,AddEmployeeDTO updateEmployee)
-    {
-        ValidationResult validationResult = validator.Validate(updateEmployee);
-        if (!validationResult.IsValid)
-            return BadRequest(validationResult.Errors.Select(s => new { field = s.PropertyName, error = s.ErrorMessage }));
-
-        DynamicParameters parameters = new();
-        parameters.Add("@empId", id);
-        parameters.Add("@name", updateEmployee.Name);
-        parameters.Add("@email", updateEmployee.Email);
-        parameters.Add("@salary", updateEmployee.Salary);
-        parameters.Add("@address", updateEmployee.Address);
-        parameters.Add("@Result", dbType:DbType.Int32,direction:ParameterDirection.Output);
-
-        repository.Execute("UpdateEmployeeData", parameters);
-
-        var result = parameters.Get<int>("@Result");
-        if (result == -1) {
             return NotFound("The requested employee cannot be found");
         }
-
-        //var existingEmloyee = dbContext.Employees.SingleOrDefault(x => x.Id == id);
-        //if(existingEmloyee == null)
-        //{
-        //    return BadRequest();
-        //}
-        //existingEmloyee.Name = updateEmployee.Name;
-        //existingEmloyee.Salary = updateEmployee.Salary;
-        //existingEmloyee.Address = updateEmployee.Address;
-        //existingEmloyee.Email = updateEmployee.Email;
-
-        //dbContext.Employees.Update(existingEmloyee);
-        //dbContext.SaveChanges();
+        return Ok(employee);
+    }
+    [HttpPut("{id}")]
+    public IActionResult Update(int id, AddEmployeeDTO updateEmployee)
+    {
+        int result = empRepository.UpdateEmployee(id, updateEmployee);
+        if (result == -1) return NotFound("The requested employee cannot be found");
+        else if(result == 401) return BadRequest("Invalid employee data provided. Please check the input and try again.");
         return Ok("Employee Updated Successfully");
     }
 }

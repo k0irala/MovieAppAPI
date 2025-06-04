@@ -1,21 +1,27 @@
 
 using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using MovieApplicationApi.Helpers;
+using MovieApplicationApi.Repository;
+using MovieApplicationApi.Signatures;
 using MovieApplicationApi.Validations;
 using WebApplication1.Controllers;
 using WebApplication1.Data;
 using WebApplication1.Interfaces;
+using WebApplication1.Models;
 using WebApplication1.Models.Entities;
 using WebApplication1.Services;
-using FluentValidation.AspNetCore;
-using WebApplication1.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddScoped<IValidator<Genre>, GenreValidator>();
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<EncryptionHelper>();
 builder.Services.AddScoped<IValidator<AddEmployeeDTO>, EmployeeValidator>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -69,13 +75,41 @@ builder.Services.AddAuthentication(x =>
 
 }
 );
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new() { Title = "Your API", Version = "v1" });
+
+    c.AddSecurityDefinition("X-Signature", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+    {
+        Name = "X-Signature",
+        Type = SecuritySchemeType.ApiKey,
+        In = ParameterLocation.Header,
+        Description = "Custom signature for securing API calls"
+    });
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "X-Signature"
+                }
+            },
+            Array.Empty<string>()
+        }
+    });
+});
+
 
 builder.Services.AddAuthorization();
 
 
 builder.Services.AddScoped<JWTService>();
 builder.Services.AddScoped<IDapperRepository, DapperRepository>();
-
+builder.Services.AddScoped<ApiSignature>();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("dbConnection"));
