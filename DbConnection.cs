@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Razor.Language.Intermediate;
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
 
 namespace WebApplication1;
 

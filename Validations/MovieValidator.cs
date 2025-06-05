@@ -1,5 +1,4 @@
 ﻿using FluentValidation;
-using Microsoft.EntityFrameworkCore.Storage.Json;
 using WebApplication1.Models.Entities;
 
 namespace MovieApplicationApi.Validations;

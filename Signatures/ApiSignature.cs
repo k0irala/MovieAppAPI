@@ -1,7 +1,4 @@
-﻿
-
-using Azure.Core;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 namespace MovieApplicationApi.Signatures;
 
 public class ApiSignature

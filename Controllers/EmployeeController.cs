@@ -3,10 +3,6 @@ using WebApplication1.Models;
 using WebApplication1.Models.Entities;
 using Microsoft.AspNetCore.Authorization;
 using MovieApplicationApi.Repository;
-using MovieApplicationApi.Signatures;
-using NuGet.Protocol.Core.Types;
-using MovieApplicationApi.Models;
-using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 
 namespace WebApplication1.Controllers;
 

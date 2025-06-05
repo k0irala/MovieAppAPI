@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using MovieApplicationApi.Models;
-using WebApplication1.Models;
+﻿using WebApplication1.Models;
 using WebApplication1.Models.Entities;
 
 namespace MovieApplicationApi.Repository

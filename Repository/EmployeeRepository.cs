@@ -2,7 +2,6 @@
 using FluentValidation;
 using FluentValidation.Results;
 using MovieApplicationApi.Helpers;
-using MovieApplicationApi.Models;
 using MovieApplicationApi.Signatures;
 using Newtonsoft.Json;
 using System.Data;
