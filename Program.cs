@@ -1,6 +1,5 @@
 
 using FluentValidation;
-using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -10,7 +9,6 @@ using MovieApplicationApi.Models;
 using MovieApplicationApi.Repository;
 using MovieApplicationApi.Signatures;
 using MovieApplicationApi.Validations;
-using WebApplication1.Controllers;
 using WebApplication1.Data;
 using WebApplication1.Interfaces;
 using WebApplication1.Models;
@@ -81,7 +79,7 @@ builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new() { Title = "Your API", Version = "v1" });
 
-    c.AddSecurityDefinition("X-Signature", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+    c.AddSecurityDefinition("X-Signature", new OpenApiSecurityScheme
     {
         Name = "X-Signature",
         Type = SecuritySchemeType.ApiKey,
