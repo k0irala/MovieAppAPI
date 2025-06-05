@@ -3,9 +3,9 @@ using WebApplication1.Models;
 
 namespace MovieApplicationApi.Validations;
 
-public class EmployeeValidator : AbstractValidator<AddEmployeeDTO>
+public class AddEmployeeValidator : AbstractValidator<AddEmployeeDTO>
 {
-    public EmployeeValidator()
+    public AddEmployeeValidator()
     {
         RuleFor(r => r.Address)
             .NotEmpty().WithMessage("Employee Addresss is Required");

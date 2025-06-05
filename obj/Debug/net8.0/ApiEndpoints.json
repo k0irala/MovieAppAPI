@@ -183,6 +183,32 @@
     ]
   },
   {
+    "ContainingType": "WebApplication1.Controllers.EmployeeController",
+    "Method": "SignatureforUpdate",
+    "RelativePath": "api/Employee/UpdateEmployeeSignature",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateEmployee",
+        "Type": "WebApplication1.Models.AddEmployeeDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "WebApplication1.Controllers.GenreController",
     "Method": "getAllGenres",
     "RelativePath": "api/Genre",

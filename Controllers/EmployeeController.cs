@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Authorization;
 using MovieApplicationApi.Repository;
 using MovieApplicationApi.Signatures;
 using NuGet.Protocol.Core.Types;
+using MovieApplicationApi.Models;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 
 namespace WebApplication1.Controllers;
 
@@ -38,6 +40,13 @@ public class EmployeeController(IEmployeeRepository empRepository) : ControllerB
         string apiSignature = empRepository.GetAddEmployeeSignature(addEmployee);
         return apiSignature;
     }
+
+    [HttpPost("UpdateEmployeeSignature")]
+    public string SignatureforUpdate(AddEmployeeDTO updateEmployee)
+    {
+        string apiSignature = empRepository.GetUpdateEmployeeSignature(updateEmployee);
+        return apiSignature;
+    }
     
     [HttpDelete("{id}")]
     public IActionResult Delete(int id)
@@ -61,7 +70,13 @@ public class EmployeeController(IEmployeeRepository empRepository) : ControllerB
     [HttpPut("{id}")]
     public IActionResult Update(int id, AddEmployeeDTO updateEmployee)
     {
-        int result = empRepository.UpdateEmployee(id, updateEmployee);
+        if (!Request.Headers.TryGetValue("X-Signature", out var signatureHeader))
+        {
+            return BadRequest("Missing X-Signature header.");
+        }
+        var apiSignature = signatureHeader.ToString();
+        int result = empRepository.UpdateEmployee(id, updateEmployee,apiSignature);
+        if (result == 0) return Conflict("The email of the user is already registered!!");
         if (result == -1) return NotFound("The requested employee cannot be found");
         else if(result == 401) return BadRequest("Invalid employee data provided. Please check the input and try again.");
         return Ok("Employee Updated Successfully");

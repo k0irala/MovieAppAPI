@@ -45,7 +45,7 @@ namespace MovieApplicationApi.Repository
         public User GetUserById(int id)
         {
             DynamicParameters parameters = new();
-            parameters.Add("@USERId", id);
+            parameters.Add("@userId", id);
             var user = repository.QuerySingleOrDefault<User>("sp_GetUserById", parameters);
             return user ?? throw new KeyNotFoundException($"User with ID {id} not found.");
         }
@@ -53,7 +53,7 @@ namespace MovieApplicationApi.Repository
         public int UpdateUser(int id, User user)
         { 
             DynamicParameters parameters = new();
-            parameters.Add("@Id", id);
+            parameters.Add("@userId", id);
             parameters.Add("@Username", user.Username);
             parameters.Add("@Phone", user.Phone);
             parameters.Add("@Address", user.Address);

@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using MovieApplicationApi.Helpers;
+using MovieApplicationApi.Models;
 using MovieApplicationApi.Repository;
 using MovieApplicationApi.Signatures;
 using MovieApplicationApi.Validations;
@@ -22,7 +23,8 @@ builder.Services.AddScoped<IValidator<Genre>, GenreValidator>();
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<EncryptionHelper>();
-builder.Services.AddScoped<IValidator<AddEmployeeDTO>, EmployeeValidator>();
+builder.Services.AddScoped<IValidator<AddEmployeeDTO>, AddEmployeeValidator>();
+builder.Services.AddScoped<IValidator<UpdateEmployeeDTO>, UpdateEmployeeValidator>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

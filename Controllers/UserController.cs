@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using MovieApplicationApi.Repository;
 using WebApplication1.Models.Entities;
@@ -7,6 +8,7 @@ namespace MovieApplicationApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class UserController(IUserRepository userRepository): ControllerBase
     {
         [HttpGet]

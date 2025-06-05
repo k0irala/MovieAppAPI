@@ -14,7 +14,7 @@ using WebApplication1.Models.Entities;
 
 namespace MovieApplicationApi.Repository
 {
-    public class EmployeeRepository(IDapperRepository repository,IValidator<AddEmployeeDTO> validator,EncryptionHelper encryption,ApiSignature signature) : IEmployeeRepository
+    public class EmployeeRepository(IDapperRepository repository,IValidator<AddEmployeeDTO> validator,IValidator<UpdateEmployeeDTO> updateValidator,EncryptionHelper encryption,ApiSignature signature) : IEmployeeRepository
     {
         private readonly string apiKey = "thisisasecretapikeynotpublic";  
         public int AddEmployee(AddEmployeeDTO addEmployee,string clientSignature)
@@ -50,6 +50,16 @@ namespace MovieApplicationApi.Repository
             return apiSignature;
         }
 
+        public string GetUpdateEmployeeSignature(AddEmployeeDTO updateEmployee)
+        {
+            ValidationResult validationResult = validator.Validate(updateEmployee);
+            if (!validationResult.IsValid)
+                return "One or more validation has failed";
+            var payload = JsonConvert.SerializeObject(updateEmployee);
+            var apiSignature = signature.ComputeSignature(apiKey,payload,out _);
+            return apiSignature;
+        }
+
         public int DeleteEmployee(int id)
         {
             DynamicParameters parameters = new();
@@ -69,7 +79,7 @@ namespace MovieApplicationApi.Repository
 
             foreach (var employee in allEmployees)
             {
-                if (employee.Id >= 14)
+                if (employee.Id >= 14 || employee.Id == 4)
                 {
                     // Ensure Address is not null before decrypting
                     if (!string.IsNullOrEmpty(employee.Address))
@@ -107,11 +117,15 @@ namespace MovieApplicationApi.Repository
             return employees;
         }
 
-        public int UpdateEmployee(int id, AddEmployeeDTO updateEmployee)
+        public int UpdateEmployee(int id, AddEmployeeDTO updateEmployee, string clientSignature)
         {
             ValidationResult validationResult = validator.Validate(updateEmployee);
             if (!validationResult.IsValid)
                 return 401;
+            
+            var requestJson = JsonConvert.SerializeObject(updateEmployee);
+            bool isValid = signature.IsValidSignature(apiKey, requestJson, clientSignature);
+            if (!isValid) return 401;
 
             string encryptedEmail = encryption.Encrypt(updateEmployee.Email);
             string encryptedAddress = encryption.Encrypt(updateEmployee.Address ?? string.Empty);
