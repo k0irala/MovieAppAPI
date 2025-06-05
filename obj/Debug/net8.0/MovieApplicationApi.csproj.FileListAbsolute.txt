@@ -278,7 +278,6 @@ C:\Users\saura\source\repos\WebApplication1\WebApplication1\obj\Debug\net8.0\sco
 C:\Users\saura\source\repos\WebApplication1\WebApplication1\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\saura\source\repos\WebApplication1\WebApplication1\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\saura\source\repos\WebApplication1\WebApplication1\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\saura\source\repos\WebApplication1\WebApplication1\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\saura\source\repos\WebApplication1\WebApplication1\obj\Debug\net8.0\MovieApp.3DEF6392.Up2Date
 C:\Users\saura\source\repos\WebApplication1\WebApplication1\obj\Debug\net8.0\MovieApplicationApi.dll
 C:\Users\saura\source\repos\WebApplication1\WebApplication1\obj\Debug\net8.0\refint\MovieApplicationApi.dll
