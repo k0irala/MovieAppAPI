@@ -4,11 +4,11 @@ using FluentValidation;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication1.Data;
-using WebApplication1.Interfaces;
-using WebApplication1.Models.Entities;
+using MovieApplicationApi.Interfaces;
+using MovieApplicationApi.Data;
+using MovieApplicationApi.Models.Entities;
 
-namespace WebApplication1.Controllers;
+namespace MovieApplicationApi.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]

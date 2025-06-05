@@ -1,4 +1,4 @@
-﻿using WebApplication1.Models.Entities;
+﻿using MovieApplicationApi.Models.Entities;
 
 namespace MovieApplicationApi.Repository
 {

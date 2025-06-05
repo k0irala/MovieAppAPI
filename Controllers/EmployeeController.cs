@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebApplication1.Models;
-using WebApplication1.Models.Entities;
+using MovieApplicationApi.Models;
+using MovieApplicationApi.Models.Entities;
 using Microsoft.AspNetCore.Authorization;
 using MovieApplicationApi.Repository;
 
-namespace WebApplication1.Controllers;
+namespace MovieApplicationApi.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]

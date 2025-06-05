@@ -1,6 +1,6 @@
 ﻿namespace MovieApplicationApi.Validations;
 using FluentValidation;
-using WebApplication1.Models.Entities;
+using MovieApplicationApi.Models.Entities;
 
 public class GenreValidator : AbstractValidator<Genre>     
 {

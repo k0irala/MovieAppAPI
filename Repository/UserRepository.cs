@@ -1,6 +1,6 @@
 ﻿using Dapper;
-using WebApplication1.Interfaces;
-using WebApplication1.Models.Entities;
+using MovieApplicationApi.Interfaces;
+using MovieApplicationApi.Models.Entities;
 
 namespace MovieApplicationApi.Repository
 {

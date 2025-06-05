@@ -5,15 +5,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using MovieApplicationApi.Helpers;
+using MovieApplicationApi.Interfaces;
 using MovieApplicationApi.Models;
 using MovieApplicationApi.Repository;
+using MovieApplicationApi.Services;
 using MovieApplicationApi.Signatures;
 using MovieApplicationApi.Validations;
-using WebApplication1.Data;
-using WebApplication1.Interfaces;
-using WebApplication1.Models;
-using WebApplication1.Models.Entities;
-using WebApplication1.Services;
+using MovieApplicationApi.Data;
+using MovieApplicationApi.Models.Entities;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

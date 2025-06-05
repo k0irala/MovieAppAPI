@@ -1,7 +1,7 @@
-﻿using MovieApplicationApi.Models.Entities;
+﻿
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WebApplication1.Models.Entities;
+namespace MovieApplicationApi.Models.Entities;
 
 public class User
 {

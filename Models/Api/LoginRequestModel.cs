@@ -1,4 +1,4 @@
-﻿namespace WebApplication1.Models.Api;
+﻿namespace MovieApplicationApi.Models.Api;
 
 public class LoginRequestModel
 {

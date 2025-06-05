@@ -1,15 +1,14 @@
 ﻿using Dapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using WebApplication1.Data;
-using WebApplication1.Interfaces;
-using WebApplication1.Models.Entities;
-using WebApplication1.Models;
+using MovieApplicationApi.Data;
+using MovieApplicationApi.Models.Entities;
 using Microsoft.AspNetCore.Authorization;
 using MovieApplicationApi.Models;
 using System.Data;
+using MovieApplicationApi.Interfaces;
 
-namespace WebApplication1.Controllers;
+namespace MovieApplicationApi.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]

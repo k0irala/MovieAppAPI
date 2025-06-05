@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MovieApplicationApi.Repository;
-using WebApplication1.Models.Entities;
+using MovieApplicationApi.Models.Entities;
 
 namespace MovieApplicationApi.Controllers
 {

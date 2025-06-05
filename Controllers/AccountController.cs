@@ -3,11 +3,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MovieApplicationApi.Models.Entities;
-using WebApplication1.Data;
-using WebApplication1.Models.Api;
-using WebApplication1.Services;
+using MovieApplicationApi.Services;
+using MovieApplicationApi.Data;
+using MovieApplicationApi.Models.Api;
 
-namespace WebApplication1.Controllers;
+namespace MovieApplicationApi.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -84,7 +84,5 @@ public class AccountController(ApplicationDbContext dbContext, JWTService jwtSer
         }
         jwtService.RevokeRefreshToken(refreshToken1.RefreshUserToken);
         return Ok("Logged out successfully");
-
-        //return Ok("Logged out successfully.");
     }
 }

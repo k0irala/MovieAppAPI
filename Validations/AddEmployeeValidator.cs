@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using WebApplication1.Models;
+using MovieApplicationApi.Models;
 
 namespace MovieApplicationApi.Validations;
 

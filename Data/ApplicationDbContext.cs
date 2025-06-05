@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MovieApplicationApi.Models.Entities;
-using WebApplication1.Models.Entities;
 
-namespace WebApplication1.Data;
+namespace MovieApplicationApi.Data;
 
 public class ApplicationDbContext : DbContext
 {

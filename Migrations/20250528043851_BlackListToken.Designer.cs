@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using WebApplication1.Data;
+using MovieApplicationApi.Data;
 
 #nullable disable
 
-namespace WebApplication1.Migrations
+namespace MovieApplicationApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20250528043851_BlackListToken")]

@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace WebApplication1.Migrations
+namespace MovieApplicationApi.Migrations
 {
     /// <inheritdoc />
     public partial class RefreshToken2 : Migration

@@ -1,5 +1,5 @@
-﻿using WebApplication1.Models;
-using WebApplication1.Models.Entities;
+﻿using MovieApplicationApi.Models;
+using MovieApplicationApi.Models.Entities;
 
 namespace MovieApplicationApi.Repository
 {

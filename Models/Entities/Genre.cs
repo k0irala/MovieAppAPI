@@ -1,5 +1,5 @@
 ﻿
-namespace WebApplication1.Models.Entities;
+namespace MovieApplicationApi.Models.Entities;
 
 public class Genre
 {

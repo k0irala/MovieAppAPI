@@ -288,3 +288,4 @@ C:\Users\saura\source\repos\WebApplication1\WebApplication1\bin\Debug\net8.0\Flu
 C:\Users\saura\source\repos\WebApplication1\WebApplication1\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
 C:\Users\saura\source\repos\WebApplication1\WebApplication1\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\saura\source\repos\WebApplication1\WebApplication1\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\saura\source\repos\WebApplication1\WebApplication1\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

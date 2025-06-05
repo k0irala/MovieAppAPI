@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using WebApplication1.Models.Entities;
 
 namespace MovieApplicationApi.Models.Entities;
 

@@ -1,13 +1,12 @@
 ﻿using Microsoft.IdentityModel.Tokens;
-using WebApplication1.Data;
-using WebApplication1.Models.Api;
+using MovieApplicationApi.Data;
+using MovieApplicationApi.Models.Api;
 using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using System.Security.Cryptography;
 using MovieApplicationApi.Models.Entities;
-using WebApplication1.Models.Entities;
-namespace WebApplication1.Services;
+namespace MovieApplicationApi.Services;
 
 public class JWTService(ApplicationDbContext dbContext, IConfiguration configuration)
 {

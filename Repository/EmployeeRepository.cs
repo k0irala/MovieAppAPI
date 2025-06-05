@@ -2,12 +2,12 @@
 using FluentValidation;
 using FluentValidation.Results;
 using MovieApplicationApi.Helpers;
+using MovieApplicationApi.Interfaces;
 using MovieApplicationApi.Signatures;
 using Newtonsoft.Json;
 using System.Data;
-using WebApplication1.Interfaces;
-using WebApplication1.Models;
-using WebApplication1.Models.Entities;
+using MovieApplicationApi.Models;
+using MovieApplicationApi.Models.Entities;
 
 namespace MovieApplicationApi.Repository;
 

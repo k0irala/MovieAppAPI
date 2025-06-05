@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using Dapper;
 
-namespace WebApplication1.Interfaces;
+namespace MovieApplicationApi.Interfaces;
 
 public interface IDapperRepository
 {

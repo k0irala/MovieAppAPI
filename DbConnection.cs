@@ -1,6 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 
-namespace WebApplication1;
+namespace MovieApplicationApi;
 
 public class DbConnection
 {
